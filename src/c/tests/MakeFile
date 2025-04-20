@@ -1,0 +1,27 @@
+CC = nvcc
+CFLAGS = -std=c++14 -O3 -Xcompiler -Wall -Wextra
+INCLUDES = -Iinclude -I/usr/local/cuda/include
+LIBS = -L/usr/local/cuda/lib64 -lcudart -lgtest -lgtest_main
+SOURCES = src/main.cpp src/vector_ops.cu
+TEST_SOURCES = tests/test_operations.cu src/vector_ops.cu
+EXECUTABLE = vector_ops
+TEST_EXECUTABLE = test_ops
+
+all: $(EXECUTABLE) $(TEST_EXECUTABLE)
+
+$(EXECUTABLE): $(SOURCES)
+	$(CC) $(CFLAGS) $(INCLUDES) $^ -o $@ $(LIBS)
+
+$(TEST_EXECUTABLE): $(TEST_SOURCES)
+	$(CC) $(CFLAGS) $(INCLUDES) $^ -o $@ $(LIBS)
+
+run: $(EXECUTABLE)
+	./$(EXECUTABLE)
+
+test: $(TEST_EXECUTABLE)
+	./$(TEST_EXECUTABLE)
+
+clean:
+	rm -f $(EXECUTABLE) $(TEST_EXECUTABLE)
+
+.PHONY: all run test clean

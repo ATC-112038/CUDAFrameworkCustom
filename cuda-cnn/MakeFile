@@ -1,0 +1,18 @@
+CC = nvcc
+CFLAGS = -std=c++14 -O3
+INCLUDES = -Iinclude
+SOURCES = src/main.cpp src/vector_add.cu
+EXECUTABLE = vector_add
+
+all: $(EXECUTABLE)
+
+$(EXECUTABLE): $(SOURCES)
+	$(CC) $(CFLAGS) $(INCLUDES) $^ -o $@
+
+clean:
+	rm -f $(EXECUTABLE)
+
+run: $(EXECUTABLE)
+	./$(EXECUTABLE)
+
+.PHONY: all clean run
