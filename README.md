@@ -18,3 +18,5 @@ Here’s an example of a (“non-alternating”) bitonic sort on 16 elements:
 
 
 (Credit to https://winwang.blog/posts/bitonic-sort/#what-is-a-bitonic-sort for in-depth explanation of bitonic source basis.)
+
+![image](https://github.com/user-attachments/assets/d2e3cecd-3baa-431e-bd6d-a21dbf5d1be4)
