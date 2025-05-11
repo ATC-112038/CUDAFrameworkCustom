@@ -22,7 +22,8 @@ Here’s an example of a (“non-alternating”) bitonic sort on 16 elements:
 ![image](https://github.com/user-attachments/assets/d2e3cecd-3baa-431e-bd6d-a21dbf5d1be4)
 
 
-![code]Shuffle code example:
+```
+Shuffle code example:
 // load data into register
 u32 datum = ...;
 // Loop:
@@ -38,6 +39,7 @@ if (lane < other_lane) {
     datum = max(datum, other_datum);
 }
 
+```
 
 _____________________________________________________
 
@@ -46,7 +48,7 @@ _____________________________________________________
 
 (Credit to NVIDIA Developer page.)
 
-
+```
 Odd even-merge sort code example in use:
 uniform vec3 Param1;
 uniform vec3 Param2;
