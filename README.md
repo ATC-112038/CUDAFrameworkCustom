@@ -22,7 +22,7 @@ Here’s an example of a (“non-alternating”) bitonic sort on 16 elements:
 ![image](https://github.com/user-attachments/assets/d2e3cecd-3baa-431e-bd6d-a21dbf5d1be4)
 
 
-Shuffle code example:
+![code]Shuffle code example:
 // load data into register
 u32 datum = ...;
 // Loop:
